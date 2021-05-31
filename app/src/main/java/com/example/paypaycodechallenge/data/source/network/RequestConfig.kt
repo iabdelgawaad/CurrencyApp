@@ -17,10 +17,6 @@ class RequestConfig constructor(
     var connectionTimeout = TIMEOUT_DEFAULT_VALUE
     var readTimeout = TIMEOUT_DEFAULT_VALUE
     var writeTimeout = TIMEOUT_DEFAULT_VALUE
-
-    //region Getters
-    val headers: Map<String, String>? = null
-    val params: Map<String, String>? = null
     val interceptors: MutableList<Interceptor> = ArrayList()
     val converterFactories: MutableList<Converter.Factory> = ArrayList()
     val callAdapterFactories: MutableList<CallAdapter.Factory> = ArrayList()
@@ -53,18 +49,6 @@ class RequestConfig constructor(
 
     fun addCallAdapterFactory(factory: CallAdapter.Factory) {
         callAdapterFactories.add(factory)
-    }
-
-    fun getCallAdapterFactories(): List<CallAdapter.Factory> {
-        return callAdapterFactories
-    }
-
-    fun getConverterFactories(): List<Converter.Factory> {
-        return converterFactories
-    }
-
-    fun getInterceptors(): List<Interceptor> {
-        return interceptors
     }
 
     companion object {
