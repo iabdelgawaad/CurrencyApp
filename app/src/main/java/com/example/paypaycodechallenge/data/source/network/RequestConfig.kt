@@ -21,9 +21,9 @@ class RequestConfig constructor(
     //region Getters
     val headers: Map<String, String>? = null
     val params: Map<String, String>? = null
-    private val interceptors: MutableList<Interceptor> = ArrayList()
-    private val converterFactories: MutableList<Converter.Factory> = ArrayList()
-    private val callAdapterFactories: MutableList<CallAdapter.Factory> = ArrayList()
+    val interceptors: MutableList<Interceptor> = ArrayList()
+    val converterFactories: MutableList<Converter.Factory> = ArrayList()
+    val callAdapterFactories: MutableList<CallAdapter.Factory> = ArrayList()
 
     //endregion
     private fun verify(

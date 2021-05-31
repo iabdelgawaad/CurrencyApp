@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit
 class APIClient(private val requestConfig: RequestConfig) {
     private val retrofit: Retrofit
     fun <T> createService(service: Class<T>?): T {
-        return retrofit.create(service)
+        return retrofit?.create(service)
     }
 
     /**
@@ -17,14 +17,14 @@ class APIClient(private val requestConfig: RequestConfig) {
         val builder = OkHttpClient.Builder()
 
         // Add custom interceptors from config
-        for (interceptor in requestConfig.interceptors) {
-            builder.addInterceptor(interceptor)
+        for (interceptor in requestConfig?.interceptors) {
+            builder?.addInterceptor(interceptor)
         }
 
         // Add timeouts
-        builder.connectTimeout(requestConfig.connectionTimeout.toLong(), TimeUnit.SECONDS)
-            .readTimeout(requestConfig.readTimeout.toLong(), TimeUnit.SECONDS)
-            .writeTimeout(requestConfig.writeTimeout.toLong(), TimeUnit.SECONDS)
+        builder.connectTimeout(requestConfig?.connectionTimeout.toLong(), TimeUnit.SECONDS)
+            .readTimeout(requestConfig?.readTimeout.toLong(), TimeUnit.SECONDS)
+            .writeTimeout(requestConfig?.writeTimeout.toLong(), TimeUnit.SECONDS)
         return builder.build()
     }
 
@@ -34,16 +34,16 @@ class APIClient(private val requestConfig: RequestConfig) {
      */
     private fun retrofit(client: OkHttpClient): Retrofit {
         val builder = Retrofit.Builder()
-            .baseUrl(requestConfig.baseUrl)
+            .baseUrl(requestConfig?.baseUrl)
             .client(client)
 
         // Add custom converters (parsers)
-        for (converterFactory in requestConfig.converterFactories) {
+        for (converterFactory in requestConfig?.converterFactories) {
             builder.addConverterFactory(converterFactory)
         }
 
         // Add custom call adapter factories
-        for (callAdapterFactory in requestConfig.callAdapterFactories) {
+        for (callAdapterFactory in requestConfig?.callAdapterFactories) {
             builder.addCallAdapterFactory(callAdapterFactory)
         }
         return builder.build()
