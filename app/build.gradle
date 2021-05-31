@@ -34,23 +34,23 @@ android {
         uat_ {
             dimension "version"
             versionNameSuffix ".uat"
-            buildConfigField 'String', 'BASE_URL', "http://api.currencylayer.com/"
+            buildConfigField 'String', 'BASE_URL', "\"https://api.currencylayer.com/\""
         }
         live_ {
             dimension "version"
             versionNameSuffix ".live"
-            buildConfigField 'String', 'BASE_URL', "http://api.currencylayer.com/"
+            buildConfigField 'String', 'BASE_URL', "\"https://api.currencylayer.com/\""
         }
         staging_ {
             dimension "version"
             versionNameSuffix ".staging"
-            buildConfigField 'String', 'BASE_URL', "http://api.currencylayer.com/"
+            buildConfigField 'String', 'BASE_URL', "\"https://api.currencylayer.com/\""
         }
         store_ {
             dimension "version"
             versionCode 1
             versionName "0.0.1"
-            buildConfigField 'String', 'BASE_URL', "http://api.currencylayer.com/"
+            buildConfigField 'String', 'BASE_URL', "\"https://api.currencylayer.com/\""
         }
     }
     compileOptions {
@@ -75,10 +75,10 @@ dependencies {
 
     // Retrofit & OkHttp
     implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
-    implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
     implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroidVersion"
     implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttpVersion"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.retrofitVersion"
 //
-
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation 'com.google.code.gson:gson:2.6.2'
 }
