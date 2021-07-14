@@ -25,3 +25,24 @@ fun String.isAnagramOf(str2: String): Boolean {
     //and Return value True or False
     return sortedStr1 == sortedStr2
 }
+
+fun Int.getFibonacciIterativeApproach(): String {
+    var t1 = 1
+    var t2 = 1
+
+    var result = StringBuilder()
+
+    for (i in 1..this) {
+        result?.append("$t1 ")
+        val sum = t1 + t2
+        t1 = t2
+        t2 = sum
+    }
+    return result.toString()
+}
+
+fun getFibonacciRecursiveApproach(n: Int): Int {
+    if (n <= 1)
+        return n;
+    return getFibonacciRecursiveApproach(n - 1) + getFibonacciRecursiveApproach(n - 2);
+}
