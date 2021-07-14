@@ -1,5 +1,6 @@
 package com.example.paypaycodechallenge
 
+import com.example.paypaycodechallenge.utils.isAnagramOf
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -11,7 +12,9 @@ import org.junit.Assert.*
  */
 class ExampleUnitTest {
     @Test
-    fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+    fun isAnagrams() {
+        var s1 = "ahmed"
+        var s2 = "hamed"
+        assertEquals(true, s1?.isAnagramOf(s2))
     }
 }
