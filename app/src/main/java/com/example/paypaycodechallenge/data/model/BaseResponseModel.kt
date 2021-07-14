@@ -1,11 +1,11 @@
 package com.example.paypaycodechallenge.data.model
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
-
-data class ResponseModel(
+data class BaseResponseModel(
     @SerializedName("error")
     val error: Error,
     @SerializedName("success")
-    val success: Boolean
-)
+    open val success: Boolean
+) : Serializable
