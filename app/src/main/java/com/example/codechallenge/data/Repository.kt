@@ -4,6 +4,7 @@ import com.example.codechallenge.data.model.LatestExchangeRatesResponseModel
 import com.example.codechallenge.data.source.network.API
 import com.example.codechallenge.data.source.network.RequestManager
 import com.example.codechallenge.utils.Constants
+import com.example.codechallenge.utils.DateUtil
 import retrofit2.Call
 
 class Repository {
@@ -14,6 +15,6 @@ class Repository {
     }
 
     fun getRates(): Call<LatestExchangeRatesResponseModel?>? {
-        return requestManager?.startRequest(API::class.java)?.getRates(Constants.ACCESS_KEY)
+        return requestManager?.startRequest(API::class.java)?.getRates(Constants.ACCESS_KEY, Constants.BASE_CURRENCY)
     }
 }

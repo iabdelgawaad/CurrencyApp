@@ -21,43 +21,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         viewModel = ViewModelProvider(this).get(ViewModel::class.java)
-        showLoading()
-        viewModel?.getRates()?.enqueue(object : Callback,
-            retrofit2.Callback<LatestExchangeRatesResponseModel?> {
-            override fun onResponse(
-                call: Call<LatestExchangeRatesResponseModel?>,
-                baseResponse: Response<LatestExchangeRatesResponseModel?>
-            ) {
-                hideLoading()
-                Log.d("result", baseResponse?.message())
-                baseResponse?.isSuccessful?.let {
-                    baseResponse?.body()?.success?.let { isSuccess ->
-                        if (isSuccess) {
-
-                        } else {
-                            this@MainActivity?.let {
-                                val dialog = AlertDialog.Builder(it)
-                                    .setTitle(getString(R.string.error_alert_dialog_title))
-                                    .setMessage(baseResponse?.body()?.error?.info)
-                                    .setPositiveButton(getString(R.string.ok_text), null)
-                                if (!(this@MainActivity).isFinishing) {
-                                    dialog?.show()
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-            override fun onFailure(
-                baseResponse: Call<LatestExchangeRatesResponseModel?>, t: Throwable
-            ) {
-                hideLoading()
-                t?.message?.let { Log.d("result", it) }
-            }
-        })
     }
-
     fun showLoading() {
         progress_bar?.visibility = View.VISIBLE
     }
