@@ -46,8 +46,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onFailure(
-                baseResponse: Call<LatestExchangeRatesResponseModel?>, t: Throwable
-            ) {
+                baseResponse: Call<LatestExchangeRatesResponseModel?>, t: Throwable) {
                 t?.message?.let { Log.d("result", it) }
             }
         })
