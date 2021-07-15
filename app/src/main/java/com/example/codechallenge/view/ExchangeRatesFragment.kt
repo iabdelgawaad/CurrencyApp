@@ -39,6 +39,7 @@ class ExchangeRatesFragment : Fragment(), ExchangeRatesAdapter.OnCurrencyClickLi
                 Log.d("result", baseResponse?.message())
                 baseResponse?.isSuccessful?.let {
                     baseResponse?.body()?.success?.let { isSuccess ->
+                        drawCurrencyList(null)
                         if (isSuccess) {
                         } else {
                             activity?.let {
@@ -65,6 +66,7 @@ class ExchangeRatesFragment : Fragment(), ExchangeRatesAdapter.OnCurrencyClickLi
     }
 
     fun drawCurrencyList(data: List<Rates>?) {
+        val data: List<String> = listOf("SAR", "EGP", "USD")
         adapter = ExchangeRatesAdapter(activity, data, this)
         rates_recycler_view?.adapter = adapter
         rates_recycler_view?.layoutManager = LinearLayoutManager(activity)
@@ -77,7 +79,7 @@ class ExchangeRatesFragment : Fragment(), ExchangeRatesAdapter.OnCurrencyClickLi
         adapter?.notifyDataSetChanged()
     }
 
-    override fun onCurrencyClick() {
-        TODO("Not yet implemented")
+    override fun onCurrencyClick(currencyName: String) {
+
     }
 }

@@ -1,20 +1,21 @@
 package com.example.codechallenge.view
 
 import android.content.Context
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.codechallenge.data.model.Rates
+import com.example.codechallenge.R
+import kotlinx.android.synthetic.main.item_currency_list.view.*
 
 class ExchangeRatesAdapter(
     var context: Context?,
-    var data: List<Rates>?,
+    var data: List<String>?,
     var listener: OnCurrencyClickListener?
-) :
-    RecyclerView.Adapter<ExchangeRatesAdapter.MyViewHolder>() {
+) : RecyclerView.Adapter<ExchangeRatesAdapter.MyViewHolder>() {
 
     interface OnCurrencyClickListener {
-        fun onCurrencyClick();
+        fun onCurrencyClick(currencyName: String);
     }
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -22,11 +23,16 @@ class ExchangeRatesAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        TODO("Not yet implemented")
+        return MyViewHolder(
+            LayoutInflater.from(parent.context).inflate(R.layout.item_currency_list, parent, false)
+        )
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        holder?.itemView?.currency_name?.text = data?.get(position)
+        holder?.itemView?.currency_name?.setOnClickListener {
+            data?.get(position)?.let { it1 -> listener?.onCurrencyClick(it1) }
+        }
     }
 
     override fun getItemCount(): Int {
