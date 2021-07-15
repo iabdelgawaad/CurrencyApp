@@ -16,4 +16,4 @@
         android:id="@+id/currencyConverterFragment2"
         android:name="com.example.codechallenge.view.CurrencyConverterFragment"
         android:label="CurrencyConverterFragment" />
-</navigation>
+   </navigation>
