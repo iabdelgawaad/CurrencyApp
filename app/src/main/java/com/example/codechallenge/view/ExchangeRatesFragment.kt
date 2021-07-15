@@ -67,8 +67,9 @@ class ExchangeRatesFragment : Fragment(), ExchangeRatesAdapter.OnCurrencyClickLi
     }
 
     fun drawCurrencyList(data: List<Rates>?) {
-        val data: List<String> = listOf("SAR", "EGP", "USD")
-        adapter = ExchangeRatesAdapter(activity, data, this)
+        val currencyNamesList: List<String> = listOf("SAR", "EGP", "USD")
+        val currencyValuesList: List<String> = listOf("4.43", "18.55", "1.18")
+        adapter = ExchangeRatesAdapter(activity, currencyNamesList, currencyValuesList, this)
         rates_recycler_view?.adapter = adapter
         rates_recycler_view?.layoutManager = LinearLayoutManager(activity)
         rates_recycler_view.addItemDecoration(
@@ -80,10 +81,15 @@ class ExchangeRatesFragment : Fragment(), ExchangeRatesAdapter.OnCurrencyClickLi
         adapter?.notifyDataSetChanged()
     }
 
-    override fun onCurrencyClick(currencyName: String) {
+    override fun onCurrencyClick(currencyName: String, value: String?) {
         val bundle = Bundle().apply {
-            putString("SELECTED_CURRENCY", currencyName)
+            putString("SELECTED_CURRENCY_NAME", currencyName)
+            putString("SELECTED_CURRENCY_VALUE", value)
+
         }
-        view?.let { Navigation.findNavController(it).navigate(R.id.action_exchangeRatesFragment_to_currencyConverterFragment2, bundle) };
+        view?.let {
+            Navigation.findNavController(it)
+                .navigate(R.id.action_exchangeRatesFragment_to_currencyConverterFragment2, bundle)
+        };
     }
 }

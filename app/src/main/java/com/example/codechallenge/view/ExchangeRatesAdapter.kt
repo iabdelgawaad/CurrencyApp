@@ -11,11 +11,12 @@ import kotlinx.android.synthetic.main.item_currency_list.view.*
 class ExchangeRatesAdapter(
     var context: Context?,
     var data: List<String>?,
+    var values: List<String>?,
     var listener: OnCurrencyClickListener?
 ) : RecyclerView.Adapter<ExchangeRatesAdapter.MyViewHolder>() {
 
     interface OnCurrencyClickListener {
-        fun onCurrencyClick(currencyName: String);
+        fun onCurrencyClick(currencyName: String, get: String?);
     }
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -30,8 +31,9 @@ class ExchangeRatesAdapter(
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder?.itemView?.currency_name?.text = data?.get(position)
+        holder?.itemView?.currency_value?.text = values?.get(position)
         holder?.itemView?.currency_name?.setOnClickListener {
-            data?.get(position)?.let { it1 -> listener?.onCurrencyClick(it1) }
+            data?.get(position)?.let { it1 -> listener?.onCurrencyClick(it1, values?.get(position)) }
         }
     }
 
