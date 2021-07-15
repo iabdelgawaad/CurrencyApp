@@ -1,4 +1,4 @@
-package com.example.paypaycodechallenge.data.model
+package com.example.codechallenge.data.model
 
 
 import com.google.gson.annotations.SerializedName

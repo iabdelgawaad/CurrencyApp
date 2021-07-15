@@ -1,6 +1,6 @@
-package com.example.paypaycodechallenge.data.source.network
+package com.example.codechallenge.data.source.network
 
-import com.example.paypaycodechallenge.BuildConfig
+import com.example.codechallenge.BuildConfig
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import io.reactivex.schedulers.Schedulers

@@ -1,6 +1,6 @@
-package com.example.paypaycodechallenge.data.source.network
+package com.example.codechallenge.data.source.network
 
-import com.example.paypaycodechallenge.data.model.LatestExchangeRatesResponseModel
+import com.example.codechallenge.data.model.LatestExchangeRatesResponseModel
 import retrofit2.Call
 import retrofit2.http.*
 

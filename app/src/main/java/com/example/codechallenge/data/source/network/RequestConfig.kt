@@ -1,7 +1,7 @@
-package com.example.paypaycodechallenge.data.source.network
+package com.example.codechallenge.data.source.network
 
 import android.text.TextUtils
-import com.example.paypaycodechallenge.BuildConfig
+import com.example.codechallenge.BuildConfig
 import okhttp3.Interceptor
 import retrofit2.CallAdapter
 import retrofit2.Converter

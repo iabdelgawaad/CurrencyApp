@@ -1,4 +1,4 @@
-package com.example.paypaycodechallenge.utils
+package com.example.codechallenge.utils
 
 import java.util.*
 

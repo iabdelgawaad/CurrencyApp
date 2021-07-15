@@ -1,4 +1,4 @@
-package com.example.paypaycodechallenge
+package com.example.codechallenge
 
 import android.app.Application
 
@@ -8,7 +8,7 @@ class MyBaseApplication : Application() {
 
         @Synchronized
         fun getInstance(): MyBaseApplication? {
-            return MyBaseApplication.instance
+            return instance
         }
     }
 

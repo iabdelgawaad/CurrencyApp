@@ -1,8 +1,8 @@
-package com.example.paypaycodechallenge
+package com.example.codechallenge
 
-import com.example.paypaycodechallenge.utils.getFibonacciIterativeApproach
-import com.example.paypaycodechallenge.utils.getFibonacciRecursiveApproach
-import com.example.paypaycodechallenge.utils.isAnagramOf
+import com.example.codechallenge.utils.getFibonacciIterativeApproach
+import com.example.codechallenge.utils.getFibonacciRecursiveApproach
+import com.example.codechallenge.utils.isAnagramOf
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

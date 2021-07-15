@@ -1,10 +1,10 @@
-package com.example.paypaycodechallenge.view
+package com.example.codechallenge.view
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import com.example.paypaycodechallenge.data.Repository
-import com.example.paypaycodechallenge.data.model.LatestExchangeRatesResponseModel
-import com.example.paypaycodechallenge.data.source.network.RequestManager
+import com.example.codechallenge.data.Repository
+import com.example.codechallenge.data.model.LatestExchangeRatesResponseModel
+import com.example.codechallenge.data.source.network.RequestManager
 import retrofit2.Call
 
 class ViewModel(application: Application) : AndroidViewModel(application) {

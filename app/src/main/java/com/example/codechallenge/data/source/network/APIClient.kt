@@ -1,4 +1,4 @@
-package com.example.paypaycodechallenge.data.source.network
+package com.example.codechallenge.data.source.network
 
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
