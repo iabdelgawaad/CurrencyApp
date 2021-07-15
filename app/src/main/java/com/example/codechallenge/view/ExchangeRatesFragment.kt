@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.codechallenge.R
@@ -80,6 +81,9 @@ class ExchangeRatesFragment : Fragment(), ExchangeRatesAdapter.OnCurrencyClickLi
     }
 
     override fun onCurrencyClick(currencyName: String) {
-
+        val bundle = Bundle().apply {
+            putString("SELECTED_CURRENCY", currencyName)
+        }
+        view?.let { Navigation.findNavController(it).navigate(R.id.action_exchangeRatesFragment_to_currencyConverterFragment2, bundle) };
     }
 }
