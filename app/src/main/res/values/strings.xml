@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">PaypayCodeChallenge</string>
+    <string name="app_name">CodeChallenge</string>
+    <string name="error_alert_dialog_title">Error</string>
+    <string name="ok_text">Ok</string>
 </resources>

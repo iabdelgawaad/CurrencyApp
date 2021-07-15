@@ -34,23 +34,23 @@ android {
         uat_ {
             dimension "version"
             versionNameSuffix ".uat"
-            buildConfigField 'String', 'BASE_URL', "\"http://api.currencylayer.com/\""
+            buildConfigField 'String', 'BASE_URL', "\"http://data.fixer.io/api/\""
         }
         live_ {
             dimension "version"
             versionNameSuffix ".live"
-            buildConfigField 'String', 'BASE_URL', "\"http://api.currencylayer.com/\""
+            buildConfigField 'String', 'BASE_URL', "\"http://data.fixer.io/api/\""
         }
         staging_ {
             dimension "version"
             versionNameSuffix ".staging"
-            buildConfigField 'String', 'BASE_URL', "\"http://api.currencylayer.com/\""
+            buildConfigField 'String', 'BASE_URL', "\"http://data.fixer.io/api/\""
         }
         store_ {
             dimension "version"
             versionCode 1
             versionName "0.0.1"
-            buildConfigField 'String', 'BASE_URL', "\"http://api.currencylayer.com/\""
+            buildConfigField 'String', 'BASE_URL', "\"http://data.fixer.io/api/\""
         }
     }
     compileOptions {

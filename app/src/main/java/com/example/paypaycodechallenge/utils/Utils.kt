@@ -44,5 +44,6 @@ fun Int.getFibonacciIterativeApproach(): String {
 fun getFibonacciRecursiveApproach(n: Int): Int {
     if (n <= 1)
         return n;
+    System.out.println("n = $n")
     return getFibonacciRecursiveApproach(n - 1) + getFibonacciRecursiveApproach(n - 2);
 }
