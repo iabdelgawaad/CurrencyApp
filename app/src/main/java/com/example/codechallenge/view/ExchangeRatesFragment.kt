@@ -40,6 +40,7 @@ class ExchangeRatesFragment : Fragment(), ExchangeRatesAdapter.OnCurrencyClickLi
                 Log.d("result", baseResponse?.message())
                 baseResponse?.isSuccessful?.let {
                     baseResponse?.body()?.success?.let { isSuccess ->
+                        //TODO: we've to send real data here but API respond with date error
                         drawCurrencyList(null)
                         if (isSuccess) {
                         } else {
